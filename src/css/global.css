@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /*
+		https://tailwindcss.com/docs/customizing-colors
+	*/
+  --primary: #262626; /* neutral-800 */
+  --secondary: #171717; /* neutral-900 */
+  --tertiary: #404040; /* neutral-700 */
+  --color: #f3f3f3;
+  --accent-primary: #2563eb; /* blue-600 */
+  --accent-primary-state: #1d4ed8; /* blue-700 */
+
+  --bg-size: 0%;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.loader {
+  @apply relative inline-block text-3xl text-color md:text-4xl lg:text-5xl;
+}
+
+.loader:before {
+  @apply absolute -bottom-1 h-2 w-full rounded-xl border border-color md:-bottom-2 md:h-3 lg:-bottom-[0.85rem] lg:h-4;
+  content: '';
+  background: linear-gradient(var(--accent-primary) 100%, transparent 0)
+    no-repeat;
+  background-size: var(--bg-size) auto;
+}
+
+.loader:after {
+  @apply relative;
+  content: 'Loading';
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
