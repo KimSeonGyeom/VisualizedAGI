@@ -152,6 +152,14 @@ module.exports = () => {
             {
               copy: [
                 {
+                  source: getDirectory('src/replay.json'),
+                  destination: 'dist/'
+                }
+              ]
+            },
+            {
+              copy: [
+                {
                   source: partytown.libDirPath(),
                   destination: 'dist/~partytown'
                 }
