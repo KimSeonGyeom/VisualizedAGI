@@ -144,6 +144,14 @@ module.exports = () => {
             {
               copy: [
                 {
+                  source: getDirectory('src/stateschema.json'),
+                  destination: 'dist/'
+                }
+              ]
+            },
+            {
+              copy: [
+                {
                   source: partytown.libDirPath(),
                   destination: 'dist/~partytown'
                 }
